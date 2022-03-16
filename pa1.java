@@ -198,16 +198,12 @@ class pa1{
         thread8.start();
         threadList.add(thread8);
 
-        for(Thread t : threadList)
+        long expected = Long.parseLong("279209790387276");
+
+        while(primeSum.get()!=expected)
         {
-            try
-            {
-                t.join();
-            }
-            catch(InterruptedException e)
-            {
-                return;
-            }
+            //wait for the expected primeSum when 
+            //all threads end
         }
 
         long end = System.nanoTime();
